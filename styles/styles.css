@@ -29,3 +29,30 @@ nav li a:hover{
 article img{
     width:60%;
 }
+/*  in-class*/
+
+imput:focus {
+    border: 2px red;
+    color: blueviolet;
+}
+/* hide the skip links using the position property*/
+.skip-links ul{
+    list-style: none;
+    position: relative;
+}
+
+.skip-links a{
+
+    position: absolute;
+    top: -10em;
+}
+
+
+.skip-links a:focus{
+    top:0;
+    background: darkorange;
+    display: block;
+    padding: 10px;
+
+}
+

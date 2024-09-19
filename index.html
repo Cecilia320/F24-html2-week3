@@ -5,29 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Playing with Accessibility</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
 </head>
 <body>
-    <nav>
+    <div class="skip-links">
+        <ul>
+            <li><a href="navigation">skip to  navigation</a></li>
+            <li><a href="#tycheInfo">skip to  main content</a></li>
+            <li><a href="">skip to  footer</a></li>
+        </ul>
+    </div>
+    <nav role="navigation">
         <ul>
             <li><a href="">Home</a></li>
             <li><a href="">About</a></li>
-            <li><a href="">Stuff</a></li>
-            <li><a href="">Contact</a></li>
+            <!--the aria-label tag helps --->
+            <li><a href=""aria-label="opens up the blog page">Stuff</a></li>
+            <li><a href=""aria-label="opens up the contact page">Contact</a></li>
         </ul>
     </nav>
     
-    <main>        
-        <article>
-            <img src="images/tyche.jpg">
+    <main role="main">  
+        <form action="processform.php" method="post">
+            <div>
+             <label for="fullname">Enter your full name:</label>  <imput type="text" name="fullname" id="fullname">
+           </div>
+           <div>
+             <label for="email">Enter your Email：</label>  <imput type="email" name="email" id="email">
+             </div>
+            <div>
+                <label for=“spam”>Spam me forever：</label>  <imput type="checkbox" name="spam" id="spam" checked="checked">
+             </div>
+             <div>
+                <imput type="submit" name="submit" value="sign up"></imput>
+             </div>
+              
+        </form>
+
+        <article itemscope itemtype="https://schema.org/Person" role="article">
+            <img src="images/tyche.jpg" aria-details="tycheInfo" alt="a grey kitten on a red blanket">
             <section id="tycheInfo">
-                <p>Tyche</p>
-                <p>October 15, 2020</p>
-                <p>Tyche crawled out of our hedge in early November 2020.</p>
+                <p itemprop="">Tyche</p>
+                <p itemprop>October 15, 2020</p>
+                <p itemprop>Tyche crawled out of our hedge in early November 2020.</p>
             </section>
         </article>
     </main>
     <aside>
-        <a href="">Subscribe</a>
+        <a href=""aria-label="open a pop-up to enter newsletter subscription information">Subscribe</a>
     </aside>
 </body>
 </html>
